@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&family=Playwrite+AU+VIC+Guides&display=swap');
+
+
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,6 +9,12 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #131722 !important;
+
+  font-family: "Playwrite AU VIC Guides", serif;
+  font-weight: 400;
+  font-style: normal;
+
 }
 
 code {
