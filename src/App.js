@@ -12,23 +12,15 @@ import { jwtDecode } from 'jwt-decode';
 import ProRoutes from './ProRoutes/ProRoutes.jsx';
 
 
-
-
-
-
-
-
 function App() {
-
-
   let [loginData, setLoginData] = useState(null)
+
   function setUserData() {
     let token = localStorage.getItem('token'); //decoded
     const decoded = jwtDecode(token);
     setLoginData(decoded)
     console.log(decoded);
   }
-
 
   function logout() {
     localStorage.removeItem('token');
@@ -48,7 +40,7 @@ function App() {
 
   return (
     <div className="App">
-      <Navbar />
+      <Navbar  logindata={loginData} logOut={logout}  />
       <Routes>
 
         
@@ -58,7 +50,8 @@ function App() {
 
 
         <Route path='register' element={<Register />} />
-        <Route path='login' element={<Login />} />
+        <Route path='login' element={<Login setUserData={setUserData} />} />
+        
 
       </Routes>
     </div>

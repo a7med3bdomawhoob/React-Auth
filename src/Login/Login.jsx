@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import axios, { AxiosError } from "axios";
 
 
-export function Login() {
+export function Login({setUserData}) {
 
     let [validateError, setValidateError] = useState([]);
     let [erroraxios, setErroraxios] = useState([]);
@@ -51,6 +51,7 @@ export function Login() {
                     setErroraxios("Success Login");
                     console.log(res.data.token);
                     localStorage.setItem("token",res.data.token);
+                    setUserData();
                 })
                 .catch((error) => {
                     console.log(error.message);
